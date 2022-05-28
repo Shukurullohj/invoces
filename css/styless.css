@@ -1,0 +1,131 @@
+/* CUSTOM PROPS */
+:root {
+    --color-purple: #7c5dfa;
+    --color-lightpurple: #9277ff;
+    --color-light: #dfe3fa;
+    --color-gray: #7e88c3;
+    --color-red: #ec5757;
+    --color-lightred: #ff9797;
+    --color-white: #ffff;
+
+    --color-light-bg: #f8f8fb;
+    --color-dark-bg: #141625;
+    --color-text: #0c0e16;
+    --color-light-text: #888eb0;
+    --color-nav-bg: #1e2139;
+
+    --font-family: "League Spartan", "Arial", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* FONTS-FACE */
+@font-face {
+    font-family: 'League Spartan';
+    src: url('./css/fonts/LeagueSpartan-Medium.woff2') format('woff2'),
+        url('./css/fonts/LeagueSpartan-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('./css/fonts/LeagueSpartan-SemiBold.woff2') format('woff2'),
+        url('./css/fonts/LeagueSpartan-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('./css/fonts/LeagueSpartan-Regular.woff2') format('woff2'),
+        url('./css/fonts/LeagueSpartan-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'League Spartan';
+    src: url('./css/fonts/LeagueSpartan-Bold.woff2') format('woff2'),
+        url('./css/fonts/LeagueSpartan-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: 'League Spartan', "Arial", sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    background-color: var(--color-light-bg);
+    color: var(--color-light-text);
+}
+a {
+    text-decoration: none;
+}
+.container {
+    width: 100%;
+    max-width: 1158px;
+    padding-left: 24px;
+    padding-right: 24px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button {
+    display: inline-block;
+    padding: 16px 24px;
+    background-color: var(--color-purple);
+    border: none;
+    border-radius: 24px;
+    color: var(--color-white);
+}
+.button:hover {
+    background-color: var(--color-lightpurple);
+}
+.button--light--save {
+    background-color: #373B53;
+    color: var(--color-light-text);
+}
+.button--dark--save {
+    color: var(--color-white);
+}
+.button--danger {
+    background-color: var(--color-red);
+}
+.button--danger:hover {
+    background-color: var(--color-lightred);
+}
+.button--dark--edit {
+    background-color: #252945;
+}
+.button--dark--edit:hover {
+    background-color: var(--color-white);
+    color: var(--color-light-text);
+}
+.button--light--edit {
+    background-color: #f9fafe;
+    color: var(--color-light-text);
+}
+.button--light--edit:hover {
+    background-color: var(--color-light);
+}
+@media only screen and (min-width: 768px) {
+    .container {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+}
