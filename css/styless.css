@@ -257,6 +257,22 @@ a {
 .card__right-arrow{
     display: none;
 }
+.back-button {
+    padding: 32px 0;
+    display: flex;
+    align-items: center;
+}
+.back-button__text {
+    font-weight: 700;
+    color: var(--color-text);
+}
+.back-button__text:hover {
+    color: var(--color-light-text);
+    cursor: pointer;
+}
+.back-button__icon {
+    margin-right: 24px;
+}
 @media only screen and (min-width: 768px) {
     .container {
         padding-left: 48px;
