@@ -8,16 +8,108 @@
     <link rel="stylesheet" href="css/styless.css">
 </head>
 <body>  
-    <header>
-        <div class="site-header">
-            <span ><svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="Combined Shape" fill-rule="evenodd" clip-rule="evenodd" d="M7.48597 0.000311013L14 12.8995L20.514 0.000310863C24.9652 2.30918 28 6.9105 28 12.21C28 19.8261 21.732 26.0002 14 26.0002C6.26801 26.0002 0 19.8261 0 12.21C0 6.9105 3.03482 2.30918 7.48597 0.000311013Z" fill="white"/>
-            </svg></span>
-            <div>
-                <span><img src="img/light-icon.svg" alt=""></span>
-                <a href=""><img src="img/avatar.svg" alt=""></a>
+
+    <div class="site-header">
+        <span class="site-header__icon"><svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="Combined Shape" fill-rule="evenodd" clip-rule="evenodd" d="M7.48597 0.000311013L14 12.8995L20.514 0.000310863C24.9652 2.30918 28 6.9105 28 12.21C28 19.8261 21.732 26.0002 14 26.0002C6.26801 26.0002 0 19.8261 0 12.21C0 6.9105 3.03482 2.30918 7.48597 0.000311013Z" fill="white"/>
+        </svg></span>
+        <div class="site-header__right">
+            <span class="site-header__light-icon"><img src="img/light-icon.svg" alt=""></span>
+            <img class="site-header__avatar"  src="img/avatar.svg" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="filter">
+            <div class="filter__invoices">
+                <h4 class="filter__invoices--title">Invoices</h4>
+                <p class="filter__invoices--value"> <span class="d-none">There are</span> 7 <span class="d-none">total</span> invoices</p>
+            </div>
+            <div class="filter__right">
+                <span>
+                    <span class="filter__right--text">Filter <span class="d-none">by status</span></span> 
+                    <span class="filter__right--icon"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5.2279 5.2279L9.4558 1" stroke="#7C5DFA" stroke-width="2"/>
+                    </svg></span>
+                </span>
+                <button class="button filter__button">
+                    <span class="filter__button--icon"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.31311 10.0234V6.3136H10.0229V3.73327H6.31311V0.0234375H3.73278V3.73327H0.0229492V6.3136H3.73278V10.0234H6.31311Z" fill="#7C5DFA"/>
+                    </svg>
+                    </span>
+                    <span class="filter__button--text">New <span class="d-none">invoice</span></span>
+                </button>
             </div>
         </div>
-    </header>
+        <div class="card">
+            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
+            <div class="card__username">Jensen Huang</div>
+            <p class="card__date">Due 19 Aug 2021</p>
+            <div class="card__price">£ 1,800.90</div>
+            <div>
+                <button class="card__button">Paid</button>
+            </div>
+            <span class="d-none">
+                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
+                </svg>
+            </span>
+        </div>
+        <div class="card">
+            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
+            <div class="card__username">Jensen Huang</div>
+            <p class="card__date">Due 19 Aug 2021</p>
+            <div class="card__price">£ 1,800.90</div>
+            <div>
+                <button class="card__button">Paid</button>
+            </div>
+            <span class="d-none">
+                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
+                </svg>
+            </span>
+        </div>
+        <div class="card">
+            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
+            <div class="card__username">Jensen Huang</div>
+            <p class="card__date">Due 19 Aug 2021</p>
+            <div class="card__price">£ 1,800.90</div>
+            <div>
+                <button class="card__button">Paid</button>
+            </div>
+            <span class="d-none">
+                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
+                </svg>
+            </span>
+        </div>
+        <div class="card">
+            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
+            <div class="card__username">Jensen Huang</div>
+            <p class="card__date">Due 19 Aug 2021</p>
+            <div class="card__price">£ 1,800.90</div>
+            <div>
+                <button class="card__button">Paid</button>
+            </div>
+            <span class="d-none">
+                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
+                </svg>
+            </span>
+        </div>
+        <div class="card">
+            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
+            <div class="card__username">Jensen Huang</div>
+            <p class="card__date">Due 19 Aug 2021</p>
+            <div class="card__price">£ 1,800.90</div>
+            <div>
+                <button class="card__button">Paid</button>
+            </div>
+            <span class="d-none">
+                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
+                </svg>
+            </span>
+        </div>
+    </div>
 </body>
 </html>
