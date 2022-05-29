@@ -40,76 +40,51 @@
                 </button>
             </div>
         </div>
-        <div class="card">
-            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
-            <div class="card__username">Jensen Huang</div>
-            <p class="card__date">Due 19 Aug 2021</p>
-            <div class="card__price">£ 1,800.90</div>
-            <div>
-                <button class="card__button">Paid</button>
+        <div id="app">
+            <div v-if="cards.length <= 0" >
+                
+                <div class="card-empty">
+                    <img class="card-empty__icon" src="img/empty-card.svg" alt="empty card">
+                    <h3 class="card-empty__title">There is nothing here</h3>
+                    <p class="card-empty__text">Create a new invoice by clicking the 
+                    New Invoice button and get started</p>
+                </div>
+              </div>
+            <div v-for="card in cards" class="card">
+                <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  {{card.id}}</h3>
+                <div class="card__username">{{card.username}}</div>
+                <p class="card__date">{{card.date}}</p>
+                <div class="card__price">£ {{card.price}}</div>
+                <div>
+                    <button class="card__button">{{card.status}}</button>
+                </div>
+                <span class="d-none">
+                    <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
+                    </svg>
+                </span>
             </div>
-            <span class="d-none">
-                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
-                </svg>
-            </span>
-        </div>
-        <div class="card">
-            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
-            <div class="card__username">Jensen Huang</div>
-            <p class="card__date">Due 19 Aug 2021</p>
-            <div class="card__price">£ 1,800.90</div>
-            <div>
-                <button class="card__button">Paid</button>
-            </div>
-            <span class="d-none">
-                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
-                </svg>
-            </span>
-        </div>
-        <div class="card">
-            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
-            <div class="card__username">Jensen Huang</div>
-            <p class="card__date">Due 19 Aug 2021</p>
-            <div class="card__price">£ 1,800.90</div>
-            <div>
-                <button class="card__button">Paid</button>
-            </div>
-            <span class="d-none">
-                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
-                </svg>
-            </span>
-        </div>
-        <div class="card">
-            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
-            <div class="card__username">Jensen Huang</div>
-            <p class="card__date">Due 19 Aug 2021</p>
-            <div class="card__price">£ 1,800.90</div>
-            <div>
-                <button class="card__button">Paid</button>
-            </div>
-            <span class="d-none">
-                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
-                </svg>
-            </span>
-        </div>
-        <div class="card">
-            <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  RT3080</h3>
-            <div class="card__username">Jensen Huang</div>
-            <p class="card__date">Due 19 Aug 2021</p>
-            <div class="card__price">£ 1,800.90</div>
-            <div>
-                <button class="card__button">Paid</button>
-            </div>
-            <span class="d-none">
-                <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
-                </svg>
-            </span>
         </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                cards: [
+                        {id : 'T34234', username: 'Emma Julia', date: 'Due 29 Aug 2021', price : '42,00.00', status: 'Paid'},
+                        {id : 'T34235', username: 'Hurry Jeck', date: 'Due 21 Aug 2021', price : '18,00.00', status: 'Pending'},
+                        {id : 'T34236', username: 'Mr Juan', date: 'Due 15 Aug 2021', price : '14,00.00', status: 'Paid'},
+                        {id : 'T34237', username: 'Light Purple', date: 'Due 14 Aug 2021', price : '10,00.00', status: 'Paid'},
+                        {id : 'T34238', username: 'Julia Maxium', date: 'Due 29 Sep 2020', price : '40,00.00', status: 'Paid'},
+                        {id : 'T34239', username: 'John Doe', date: 'Aug 31 Aug 2020', price : '38,00.00', status: 'Draft'},
+                ]
+            },
+            methods: {
+
+                }
+            },
+        )
+    </script>
 </body>
 </html>
