@@ -20,14 +20,14 @@
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 /* FONTS-FACE */
 @font-face {
     font-family: 'League Spartan';
-    src: url('./css/fonts/LeagueSpartan-Medium.woff2') format('woff2'),
-        url('./css/fonts/LeagueSpartan-Medium.woff') format('woff');
+    src: url('./fonts/LeagueSpartan-Medium.woff2') format('woff2'),
+        url('./fonts/LeagueSpartan-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;
@@ -35,8 +35,8 @@
 
 @font-face {
     font-family: 'League Spartan';
-    src: url('./css/fonts/LeagueSpartan-SemiBold.woff2') format('woff2'),
-        url('./css/fonts/LeagueSpartan-SemiBold.woff') format('woff');
+    src: url('./fonts/LeagueSpartan-SemiBold.woff2') format('woff2'),
+        url('./fonts/LeagueSpartan-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -44,8 +44,8 @@
 
 @font-face {
     font-family: 'League Spartan';
-    src: url('./css/fonts/LeagueSpartan-Regular.woff2') format('woff2'),
-        url('./css/fonts/LeagueSpartan-Regular.woff') format('woff');
+    src: url('./fonts/LeagueSpartan-Regular.woff2') format('woff2'),
+        url('./fonts/LeagueSpartan-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -53,8 +53,8 @@
 
 @font-face {
     font-family: 'League Spartan';
-    src: url('./css/fonts/LeagueSpartan-Bold.woff2') format('woff2'),
-        url('./css/fonts/LeagueSpartan-Bold.woff') format('woff');
+    src: url('./fonts/LeagueSpartan-Bold.woff2') format('woff2'),
+        url('./fonts/LeagueSpartan-Bold.woff') format('woff');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -123,9 +123,210 @@ a {
 .button--light--edit:hover {
     background-color: var(--color-light);
 }
+.site-header {
+    background-color: var(--color-nav-bg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.site-header__right {
+    display: flex;
+    align-items: center;
+}
+.site-header__avatar {
+    padding: 20px 24px;
+    border-left: var(--color-light-text) solid 0.2px;
+}
+.site-header__icon {
+    padding: 20px 24px;
+}
+.site-header__light-icon {
+    padding-right: 24px;
+}
+.filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 34px 0;
+}
+.filter__invoices--title {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    color: var(--color-text);
+}
+.filter__invoices--value {
+    margin: 0;
+    padding: 0;
+    padding-top: 4px;
+}
+.filter__right {
+    display: flex;
+    align-items: center;
+}
+.filter__right--text {
+    color: var(--color-text);
+    padding-right: 12px;
+    font-weight: 700;
+}
+.filter__right--icon {
+    padding-right: 18px;
+}
+.filter__button {
+    padding: 14px 6px ;
+}
+.filter__button--icon {
+    background-color: var(--color-white);
+    border-radius: 50%;
+    padding: 10px;
+    text-align: center;
+}
+.filter__button--text {
+    margin: 0 8px;
+}
+.d-none {
+    display: none;
+}
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-flow: wrap;
+    padding: 24px;
+    border-radius: 8px;
+    background-color: #fff;
+}
+.card:not(:last-child) {
+    margin-bottom: 16px;
+}
+.card__id {
+    color: var(--color-text);
+    margin: 0;
+    margin-bottom: 24px;
+}
+.card__username {
+    align-self: start;
+    text-align: right;
+    flex: 1 1 80%;
+}
+.card__date {
+    margin: 0;
+    margin-bottom: 8px;
+}
+.card__price {
+    flex: 1 1 90%;
+    color: var(--color-text);
+    font-weight: 700;
+    font-size: 16px;
+}
+.card__button {
+    position: absolute;
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    background-color: #d4fff1;
+    padding: 13px 30px;
+    border: none;
+    border-radius: 6px;
+    color: #33D69F;
+}
+.card__button::before {
+    display: inline-block;
+    background-color: #33D69F;
+    padding: 4px;
+    margin-right: 8px;
+    border-radius: 50%;
+    content: '';
+}
+.card-empty {
+    text-align: center;
+    margin: 100px auto;
+}
+.card-empty__icon {
+    margin-bottom: 40px;
+}
+.card-empty__title {
+    margin: 0;
+    color: var(--color-text);
+}
+.card-empty__text {
+    margin: 0;
+    margin-top: 24px;
+}
+.card__right-arrow{
+    display: none;
+}
 @media only screen and (min-width: 768px) {
     .container {
         padding-left: 48px;
         padding-right: 48px;
+    }
+    .filter {
+        padding: 56px 0;
+    }
+    .d-none {
+        display: inline-block;
+    }
+    .card {
+        justify-content: space-around;
+        align-items: center;
+    }
+    .card__username {
+        flex: 0 1 auto;
+        align-self: center;
+    }
+    .card__price {
+        flex: 0 1 auto;
+    }
+    .card__id {
+        margin-bottom: 0;
+    }
+    .card__date {
+        margin-bottom: 0;
+    }
+    .card__button {
+        position: static;
+    }
+    .card__right-arrow {
+        display: block;
+    }
+    .card-empty {
+        margin: 210px auto;
+    }
+}
+@media only screen and (min-width: 1024px) {
+    .container {
+        padding-right: 170px;
+        padding-left: 170px;
+    }
+    .filter {
+        padding: 72px 0;
+    }
+    .site-header {
+        flex-direction: column;
+        height: 100%; 
+        width: 103px; 
+        position: fixed; 
+        z-index: 1; 
+        top: 0; 
+        left: 0;
+        overflow-x: hidden;
+    }
+    .site-header__right {
+        flex-direction: column;
+    }
+    .site-header__light-icon {
+        padding-right: 0;
+        margin-bottom: 24px;
+    }
+    .site-header__avatar {
+        border-top: var(--color-light-text) solid 0.2px;
+        border-left: none;
+        padding: 0;
+        padding: 24px 32px;
+    }
+    .card-empty {
+        margin: 140px auto;
     }
 }

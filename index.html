@@ -8,16 +8,85 @@
     <link rel="stylesheet" href="css/styless.css">
 </head>
 <body>  
-    <header>
-        <div class="site-header">
-            <span ><svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path id="Combined Shape" fill-rule="evenodd" clip-rule="evenodd" d="M7.48597 0.000311013L14 12.8995L20.514 0.000310863C24.9652 2.30918 28 6.9105 28 12.21C28 19.8261 21.732 26.0002 14 26.0002C6.26801 26.0002 0 19.8261 0 12.21C0 6.9105 3.03482 2.30918 7.48597 0.000311013Z" fill="white"/>
-            </svg></span>
-            <div>
-                <span><img src="img/light-icon.svg" alt=""></span>
-                <a href=""><img src="img/avatar.svg" alt=""></a>
+
+    <div class="site-header">
+        <span class="site-header__icon"><svg width="28" height="26" viewBox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path id="Combined Shape" fill-rule="evenodd" clip-rule="evenodd" d="M7.48597 0.000311013L14 12.8995L20.514 0.000310863C24.9652 2.30918 28 6.9105 28 12.21C28 19.8261 21.732 26.0002 14 26.0002C6.26801 26.0002 0 19.8261 0 12.21C0 6.9105 3.03482 2.30918 7.48597 0.000311013Z" fill="white"/>
+        </svg></span>
+        <div class="site-header__right">
+            <span class="site-header__light-icon"><img src="img/light-icon.svg" alt=""></span>
+            <img class="site-header__avatar"  src="img/avatar.svg" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="filter">
+            <div class="filter__invoices">
+                <h4 class="filter__invoices--title">Invoices</h4>
+                <p class="filter__invoices--value"> <span class="d-none">There are</span> 7 <span class="d-none">total</span> invoices</p>
+            </div>
+            <div class="filter__right">
+                <span>
+                    <span class="filter__right--text">Filter <span class="d-none">by status</span></span> 
+                    <span class="filter__right--icon"><svg width="10" height="7" viewBox="0 0 10 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5.2279 5.2279L9.4558 1" stroke="#7C5DFA" stroke-width="2"/>
+                    </svg></span>
+                </span>
+                <button class="button filter__button">
+                    <span class="filter__button--icon"><svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6.31311 10.0234V6.3136H10.0229V3.73327H6.31311V0.0234375H3.73278V3.73327H0.0229492V6.3136H3.73278V10.0234H6.31311Z" fill="#7C5DFA"/>
+                    </svg>
+                    </span>
+                    <span class="filter__button--text">New <span class="d-none">invoice</span></span>
+                </button>
             </div>
         </div>
-    </header>
+        <div id="app">
+            <div v-if="cards.length <= 0" >
+                
+                <div class="card-empty">
+                    <img class="card-empty__icon" src="img/empty-card.svg" alt="empty card">
+                    <h3 class="card-empty__title">There is nothing here</h3>
+                    <p class="card-empty__text">Create a new invoice by clicking the 
+                    New Invoice button and get started</p>
+                </div>
+              </div>
+            <div v-for="card in cards" class="card">
+                <h3 class="card__id"> <span style="color: var(--color-light-text);">#</span>  {{card.id}}</h3>
+                <div class="card__username">{{card.username}}</div>
+                <p class="card__date">{{card.date}}</p>
+                <div class="card__price">£ {{card.price}}</div>
+                <div>
+                    <button class="card__button">{{card.status}}</button>
+                </div>
+                <span class="d-none">
+                    <svg width="7" height="10" viewBox="0 0 7 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 1L5 5L1 9" stroke="#7C5DFA" stroke-width="2"/>
+                    </svg>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                cards: [
+                        {id : 'T34234', username: 'Emma Julia', date: 'Due 29 Aug 2021', price : '42,00.00', status: 'Paid'},
+                        {id : 'T34235', username: 'Hurry Jeck', date: 'Due 21 Aug 2021', price : '18,00.00', status: 'Pending'},
+                        {id : 'T34236', username: 'Mr Juan', date: 'Due 15 Aug 2021', price : '14,00.00', status: 'Paid'},
+                        {id : 'T34237', username: 'Light Purple', date: 'Due 14 Aug 2021', price : '10,00.00', status: 'Paid'},
+                        {id : 'T34238', username: 'Julia Maxium', date: 'Due 29 Sep 2020', price : '40,00.00', status: 'Paid'},
+                        {id : 'T34239', username: 'John Doe', date: 'Aug 31 Aug 2020', price : '38,00.00', status: 'Draft'},
+                ]
+            },
+            methods: {
+
+                }
+            },
+        )
+
+        
+    </script>
 </body>
 </html>
